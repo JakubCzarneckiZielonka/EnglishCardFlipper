@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/pytanie"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_text"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:text="Pytanie">
+    </TextView>
+
+    <TextView
+        android:id="@+id/odpowiedz"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/pytanie"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_text"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:text="Odpowiedź">
+    </TextView>
+
+    <Button
+        android:id="@+id/sprawdzam"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/odpowiedz"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="36dp"
+        android:layout_marginLeft="36dp"
+        android:backgroundTint="#3F51B5"
+        android:gravity="center"
+        android:text="Sprawdzam" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sprawdzam"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_Good"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Umiem"
+            android:layout_marginRight="16dp"
+            android:backgroundTint="#23CF2A"
+            />
+        <Button
+            android:id="@+id/btn_Bad"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Nie Umiem"
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="#E20A0A"
+            />
+    </LinearLayout>
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:backgroundColor="#D81111"
+        app:menu="@menu/menu" />
+
+    <Button
+        android:id="@+id/buttonpobierz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:text="Button" />
+
+</RelativeLayout>

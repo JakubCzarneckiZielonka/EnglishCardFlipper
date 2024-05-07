@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/my"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item android:id="@+id/mysettinf"
+        android:title="Setting"
+        android:icon="@drawable/baseline_settings_24"/>
+
+    <item android:id="@+id/myperson"
+        android:title="Person"
+        android:icon="@drawable/baseline_person_24"/>
+
+    <item android:id="@+id/mymore"
+        android:title="More"
+        android:icon="@drawable/baseline_wifi_24"/>
+</menu>
