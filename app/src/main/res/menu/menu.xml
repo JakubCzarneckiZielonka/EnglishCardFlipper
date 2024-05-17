@@ -13,7 +13,7 @@
         android:title="Person"
         android:icon="@drawable/baseline_person_24"/>
 
-    <item android:id="@+id/mymore"
-        android:title="More"
-        android:icon="@drawable/baseline_wifi_24"/>
+    <item android:id="@+id/mygame"
+        android:title="Game"
+        android:icon="@drawable/baseline_games_24"/>
 </menu>

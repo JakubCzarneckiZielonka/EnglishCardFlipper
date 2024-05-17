@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678385119305",
+    "project_id": "englishcardflipper",
+    "storage_bucket": "englishcardflipper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678385119305:android:5bc54b220425516407cf98",
+        "android_client_info": {
+          "package_name": "com.example.englishcardflipper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBndwETbkGh5rA9gevKcTWNUq6k5q_E_RY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -38,7 +38,7 @@ public class LoadWordsTask extends AsyncTask<Void, Void, Void> {
         String polishWord;
         while ((englishWord = englishReader.readLine()) != null && (polishWord = polishReader.readLine()) != null) {
             // Tworzenie obiektu Word z odczytanymi słowami
-            Word word = new Word(0, englishWord, polishWord, false, 0, 0);
+            Word word = new Word(0, englishWord, polishWord, 0, 0, 0);
 
             // Sprawdzenie, czy słówko już istnieje w bazie danych
             List<Word> existingWords = wordDatabase.wordDao().getWordByEnglishWord(englishWord);

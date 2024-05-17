@@ -13,13 +13,13 @@ public class Word {
     @ColumnInfo(name = "polish_word")
     private String polishWord;
     @ColumnInfo(name = "is_correct")
-    private boolean isCorrect;
+    private int isCorrect;
     @ColumnInfo(name = "word_today")
     private int wordToday;
     @ColumnInfo(name = "word_all")
     private int wordAll;
 
-    public Word(int id, String englishWord, String polishWord, boolean isCorrect, int wordToday, int wordAll) {
+    public Word(int id, String englishWord, String polishWord, int isCorrect, int wordToday, int wordAll) {
         this.id = id;
         this.englishWord = englishWord;
         this.polishWord = polishWord;
@@ -62,11 +62,11 @@ public class Word {
         this.polishWord = polishWord;
     }
 
-    public boolean isCorrect() {
+    public int isCorrect() {
         return isCorrect;
     }
 
-    public void setCorrect(boolean correct) {
+    public void setCorrect(int correct) {
         isCorrect = correct;
     }
 

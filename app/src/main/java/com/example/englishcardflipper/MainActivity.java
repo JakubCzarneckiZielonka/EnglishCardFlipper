@@ -80,23 +80,14 @@ public class MainActivity extends AppCompatActivity {
         nieUmiemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    compositeDisposable.add(wordDao.deleteAll()
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(() -> {
-                                // Sukces - wszystkie rekordy zostały usunięte
-                                Log.d("DeleteAllSuccess", "All words deleted successfully");
-                            }, throwable -> {
-                                // Błąd podczas usuwania rekordów
-                                Log.e("DeleteAllError", "Error deleting all words: " + throwable.getMessage());
-                            }));
-                } catch (Exception e) {
-                    // Obsługa wyjątku
-                    Log.e("DeleteAllError", "Error deleting all words: " + e.getMessage());
+                if (words != null && !words.isEmpty()) {
+                    // Przejście do kolejnego słowa
+                    currentIndex = (currentIndex + 1) % words.size();
+                    displayCurrentWord();
                 }
             }
         });
+
 
 
         umiemButton.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (words != null && !words.isEmpty()) {
                     Word currentWord = words.get(currentIndex);
-                    currentWord.setCorrect(true);
+
+                    // Zwiększenie wartości wordToday i wordAll o jeden
+                    currentWord.setWordToday(currentWord.getWordToday() + 1);
+                    currentWord.setWordAll(currentWord.getWordAll() + 1);
 
                     compositeDisposable.add(Completable.fromAction(() -> wordDao.updateWord(currentWord))
                             .subscribeOn(Schedulers.io())
@@ -122,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         smoothBottomBar.setOnItemReselectedListener(new OnItemReselectedListener() {
             @Override
@@ -172,10 +167,10 @@ public class MainActivity extends AppCompatActivity {
     private void handleFirstRecord(List<Word> words) {
         if (!words.isEmpty()) {
             Word firstRecord = words.get(0);
-            // Wyświetlenie całego rekordu w logach
+
             Log.d("FirstRecord", "Record: " + firstRecord.toString());
         } else {
-            // Jeśli baza danych jest pusta
+
             Log.d("FirstRecord", "Baza danych jest pusta.");
         }
     }
@@ -183,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        compositeDisposable.dispose(); // Zwolnienie zasobów RxJava
+        compositeDisposable.dispose();
     }
 
 
