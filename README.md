@@ -1,2 +1,4 @@
 I created this program to learn in my free time, I will fix it and improve its appearance, for now it is tedious because my skills do not allow me to improve the application quickly and effectively, I am constantly learning.
 Application for learning English-Polish technologies used are rxjava firebase and Room, for now the application works on activities, not on fragments, it just tests solutions. The application has features such as hangman login and tabs with English application.![Screenshot_20240517_150815](https://github.com/JakubCzarneckiZielonka/EnglishCardFlipper/assets/97091962/4f8f2766-56ca-49b7-a335-a15e86a97075)
+![kjsabhdjkas](https://github.com/JakubCzarneckiZielonka/EnglishCardFlipper/assets/97091962/4c552f29-4274-4dab-8127-e617cf03555e)
+![kjbk](https://github.com/JakubCzarneckiZielonka/EnglishCardFlipper/assets/97091962/88aa9206-4adf-4184-9436-3c0269b911f7)
