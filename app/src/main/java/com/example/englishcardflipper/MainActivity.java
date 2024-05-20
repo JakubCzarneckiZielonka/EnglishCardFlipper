@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::setWords, throwable -> {
-                    // Obsługa błędów
+                    // Obsługa błędów muszę tu cos wymyślić by przecwiczyc
                 }));
 
 

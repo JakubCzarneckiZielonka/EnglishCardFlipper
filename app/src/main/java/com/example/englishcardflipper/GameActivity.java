@@ -36,7 +36,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Inicjalizacja interfejsu Dao
+
         wordDao = WordDatabase.getDatabase(this).wordDao();
 
         textViewWord = findViewById(R.id.textViewWord);
@@ -45,7 +45,7 @@ public class GameActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.textViewResult);
         textViewTranslation = findViewById(R.id.textViewTranslation);
 
-        // Pobierz słowa z bazy danych
+        // Download words from the database
         disposable.add(wordDao.getAllWordsRx()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -64,15 +64,15 @@ public class GameActivity extends AppCompatActivity {
         this.words = words;
         Random random = new Random();
         Word randomWord = words.get(random.nextInt(words.size()));
-        secretWord = randomWord.getEnglishWord().toLowerCase(); // English word
-        String polishTranslation = randomWord.getPolishWord(); // Polish translation
+        secretWord = randomWord.getEnglishWord().toLowerCase();
+        String polishTranslation = randomWord.getPolishWord();
 
         guessedWord = new StringBuilder();
         for (int i = 0; i < secretWord.length(); i++) {
             guessedWord.append("*");
         }
-        textViewWord.setText(guessedWord); // Display English word
-        textViewTranslation.setText(polishTranslation); // Display Polish translation
+        textViewWord.setText(guessedWord);
+        textViewTranslation.setText(polishTranslation);
     }
 
 
@@ -110,7 +110,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Usuń subskrypcje po zakończeniu aktywności, aby uniknąć wycieków pamięci
+
         disposable.clear();
     }
 }
